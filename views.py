@@ -158,14 +158,14 @@ def light_gone(request):
 			try:
 				add_time = int(add_time)
 			except:
-				return render(request,'Add.html',{'message':'Fuck You'})
+				return render(request,'Add.html',{'message':'not ok'})
 			add_time = add_time*60
 			for i in q:
 				i.end_time = i.end_time+add_time
 				i.save()
 			return render(request,'Add.html',{'message':'Time successfully added'})
 	else:
-		return render(request,'Add.html',{'message':'Fuck You'})
+		return render(request,'Add.html',{'message':'not ok'})
 
 def add_time(request):
 	return render(request,'Add.html')
